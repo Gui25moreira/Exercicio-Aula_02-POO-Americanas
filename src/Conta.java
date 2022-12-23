@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Conta {
 
     private String numConta;
@@ -69,6 +71,27 @@ public class Conta {
         }
     }
 
+    public static Conta verificaConta(Conta[] array, String conta) {
+        Conta x = new Conta();
+        for (int i = 0; i <= array.length - 1; i++) {
+            if (array[i] != null) {
+                if (conta.equals(array[i].getNumConta())) {
+                    x = array[i];
+                }
+            }
+        }
+        return x;
+    }
 
+    public static boolean verificaSenha(Conta[] array, String conta) {
+        for (int i = 0; i <= array.length - 1; i++) {
+            if (array[i] != null) {
+                if (conta.equals(array[i].getSenha())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 
